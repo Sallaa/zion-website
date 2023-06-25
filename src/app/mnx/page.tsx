@@ -11,7 +11,7 @@ export default function Mnx() {
     setPassword(value)
   }
 
-  const handlePasswordCheck = (event: FormEvent<HTMLInputElement>) => {
+  const handlePasswordCheck = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (password === "test") {
       setPasswordFound(true)
@@ -23,14 +23,13 @@ export default function Mnx() {
             className="bg-cover flex min-h-screen flex-col items-center justify-between p-24 bg-black">
             <div className="flex flex-col h-screen justify-center items-center">
                 {isPasswordFound ? 
-                
-                <h1 className="text-3xl">password found!</h1>
+                  <img src={"/MNX_cover.png"} />
                 :
                 
-                <form className="text-center space-y-5">
-                    <h1 className="text-3xl">password :</h1>
+                <form className="text-center space-y-5" onSubmit={e => handlePasswordCheck(e)}>
+                    <h1 className="text-white text-3xl">password :</h1>
                     <input className="inputMnx" type="password" name="password" value={password} onChange={e => handleChange(e.target.value)}/>
-                    <input className={'btnSubmitMnx'} type="submit" value="ENTER" onSubmit={e => handlePasswordCheck(e)}/>
+                    <input className={'btnSubmitMnx'} type="submit" value="ENTER" />
                 </form>
                 
                 }
