@@ -17,6 +17,16 @@ export default function Mnx() {
     }
   };
 
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handlePress = () => {
+    setIsPressed(true);
+  };
+
+  const handleRelease = () => {
+    setIsPressed(false);
+  };
+
   return (
     <main
       className="bg-cover flex min-h-screen flex-col items-center justify-between p-24"
@@ -43,11 +53,27 @@ export default function Mnx() {
             />
             <br />
             <br />
-            <input
-              className={"btnSubmitMnx text-black"}
+            <button
+              className={
+                isPressed
+                  ? "btnSubmitMnxPressed text-black"
+                  : "btnSubmitMnx text-black"
+              }
               type="submit"
-              value="ENTER"
-            />
+              style={{
+                background: "#D9D9D9",
+                textAlign: "center",
+                fontSize: "36px",
+                lineHeight: "47px",
+                letterSpacing: "11.34px",
+              }}
+              onMouseDown={handlePress}
+              onMouseUp={handleRelease}
+              onTouchStart={handlePress}
+              onTouchEnd={handleRelease}
+            >
+              ENTER
+            </button>
           </form>
         )}
       </div>

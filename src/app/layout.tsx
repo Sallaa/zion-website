@@ -1,7 +1,8 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { Source_Sans_Pro } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const sourceSans = Source_Sans_Pro({ weight: "300", subsets: ["latin"] });
 
 export const metadata = {
   title: "ZION",
@@ -15,7 +16,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={sourceSans.className}>{children}</body>
     </html>
   );
 }
