@@ -30,6 +30,7 @@ body {
   color: #000;
   height: 63px;
   -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 
 .btnSubmitMnx {
