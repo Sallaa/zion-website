@@ -49,7 +49,7 @@ export default function Mnx() {
               name="password"
               value={password}
               onChange={(e) => handleChange(e.target.value)}
-              style={{ width: "70vw" }}
+              style={{ width: "75vw" }}
             />
             <br />
             <br />
