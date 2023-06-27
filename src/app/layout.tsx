@@ -2,7 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Source_Sans_Pro } from "next/font/google";
 
-const sourceSans = Source_Sans_Pro({ weight: "300", subsets: ["latin"] });
+const sourceSans = Source_Sans_Pro({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
   title: "ZION",

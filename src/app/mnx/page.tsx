@@ -63,7 +63,6 @@ export default function Mnx() {
               style={{
                 background: "#D9D9D9",
                 textAlign: "center",
-                fontSize: "36px",
                 lineHeight: "47px",
                 letterSpacing: "11.34px",
               }}
