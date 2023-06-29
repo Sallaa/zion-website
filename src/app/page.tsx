@@ -65,14 +65,14 @@ export default function Mnx() {
                 textAlign: "center",
                 lineHeight: "47px",
                 letterSpacing: "11.34px",
-                marginRight: "-11.34px",
               }}
               onMouseDown={handlePress}
               onMouseUp={handleRelease}
               onTouchStart={handlePress}
               onTouchEnd={handleRelease}
             >
-              ENTER
+              ENTE
+              <span style={{ letterSpacing: "0px" }}>R</span>
             </button>
           </form>
         )}
