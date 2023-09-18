@@ -2,80 +2,37 @@
 import { FormEvent, useState, useRef, useEffect } from "react";
 
 export default function Mnx() {
-  const [password, setPassword] = useState("");
-
-  const [isPasswordFound, setPasswordFound] = useState(false);
-
-  const handleChange = (value: string) => {
-    setPassword(value);
-  };
-
-  const handlePasswordCheck = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (password === "vizion") {
-      setPasswordFound(true);
-    }
-  };
-
-  const [isPressed, setIsPressed] = useState(false);
-
-  const handlePress = () => {
-    setIsPressed(true);
-  };
-
-  const handleRelease = () => {
-    setIsPressed(false);
-  };
-
   return (
     <main
-      className="bg-cover flex min-h-screen flex-col items-center justify-between p-24"
-      style={{ background: "#CDCDCD" }}
+      className="bg-cover"
+      style={{ minHeight: "100vh", background: "black" }}
     >
-      <div className="flex flex-col h-screen justify-center items-center">
-        {isPasswordFound ? (
-          <div>
-            <video id="video" src={"/MNX_video.mp4"} autoPlay loop />
+      <div
+        className="fixed top-0 w-full"
+        style={{ mixBlendMode: "difference", color: "#FFF" }}
+      >
+        <nav className="container mx-auto px-6 py-3">
+          <div className="flex justify-between items-center">
+            <a href="#" className="text-2xl font-bold text-800">
+              ZION
+            </a>
+            <div className="hidden md:flex items-center space-x-6">
+              <a
+                href="#"
+                className="text-800 tracking-widest"
+                style={{ mixBlendMode: "difference" }}
+              >
+                Archives
+              </a>
+              <a href="#" className="text-800 tracking-widest">
+                Contact
+              </a>
+            </div>
           </div>
-        ) : (
-          <form
-            className="text-center space-y-5"
-            onSubmit={(e) => handlePasswordCheck(e)}
-          >
-            <h1 className="text-black text-3xl">password :</h1>
-            <input
-              className="inputMnx"
-              type="password"
-              name="password"
-              value={password}
-              onChange={(e) => handleChange(e.target.value)}
-              style={{ width: "75vw" }}
-            />
-            <br />
-            <br />
-            <button
-              className={
-                isPressed
-                  ? "btnSubmitMnxPressed text-black"
-                  : "btnSubmitMnx text-black"
-              }
-              type="submit"
-              style={{
-                background: "#D9D9D9",
-                textAlign: "center",
-                lineHeight: "47px",
-                letterSpacing: "11.34px",
-              }}
-              onMouseDown={handlePress}
-              onMouseUp={handleRelease}
-              onTouchStart={handlePress}
-              onTouchEnd={handleRelease}
-            >
-              ENTE
-              <span style={{ letterSpacing: "0px" }}>R</span>
-            </button>
-          </form>
-        )}
+        </nav>
+      </div>
+      <div>
+        <video autoPlay muted loop id="video" src={"/MNX_video.mp4"} />
       </div>
     </main>
   );
