@@ -1,8 +1,8 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { Source_Sans_Pro } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
-const sourceSans = Source_Sans_Pro({ weight: "400", subsets: ["latin"] });
+const bebasNeue = Bebas_Neue({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
   title: "ZION",
@@ -28,7 +28,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={sourceSans.className}>{children}</body>
+      <body className={bebasNeue.className}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
